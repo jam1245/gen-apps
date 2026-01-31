@@ -1,0 +1,11 @@
+﻿pages:
+  stage: deploy
+  image: node:20
+  script:
+    - npm install --prefix frontend
+    - npm run build --prefix frontend   # Vite will output to ../public as configured
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

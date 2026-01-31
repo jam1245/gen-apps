@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Chat Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>LLM Chat Demo</h1>
+    <p>Enter your API key (stored for this session) and ask a question.</p>
+  </header>
+  <section id="api-key-section">
+    <label for="api-key-input">API Key:</label>
+    <input type="password" id="api-key-input" placeholder="Enter your API key">
+    <button id="save-key-btn">Save Key</button>
+  </section>
+  <section id="chat-section" class="hidden">
+    <label for="model-select">Model:</label>
+    <select id="model-select">
+      <option value="llama-3.3-70b-instruct" selected>llama-3.3-70b-instruct</option>
+      <option value="gpt-4o">gpt-4o</option>
+      <option value="gpt-4o-mini">gpt-4o-mini</option>
+      <option value="claude-3-5-sonnet-latest">claude-3-5-sonnet-latest</option>
+      <option value="gpt-oss-120b">gpt-oss-120b</option>
+      <option value="gemma-3-27b-it">gemma-3-27b-it</option>
+    </select>
+    <textarea id="prompt-input" rows="4" placeholder="Enter your prompt..."></textarea>
+    <button id="send-btn">Send</button>
+    <div id="loading" class="hidden">Loading...</div>
+    <div id="response-container"></div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
