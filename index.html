@@ -1,28 +1,41 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAM Assistant</title>
+  <title>Multi-Agent Orchestrator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>CAM Assistant</h1>
-    <p>Control Account Management guidance. Enter your API key to start.</p>
+    <h1>Multi-Agent Orchestrator</h1>
+    <p>PM Collaborator &middot; Risk &amp; Opportunity &middot; CAM Agent</p>
   </header>
+
   <section id="api-key-section">
-    <label for="api-key-input">API Key:</label>
     <input type="password" id="api-key-input" placeholder="Enter your API key">
     <button id="save-key-btn">Save Key</button>
   </section>
-  <section id="chat-section" class="hidden">
-    <p><strong>Assistant:</strong> CAM Assistant (gpt-4o-mini)</p>
-    <textarea id="prompt-input" rows="4" placeholder="Ask a CAM question..."></textarea>
-    <button id="send-btn">Send</button>
-    <div id="loading" class="hidden">Loading...</div>
-    <div id="response-container"></div>
-  </section>
-  <script src="script.js"></script>
+
+  <main id="app" class="hidden">
+    <div id="agent-selector">
+      <button class="agent-btn active" data-agent="auto">Auto-Route</button>
+      <button class="agent-btn" data-agent="PM_COLLABORATOR">PM</button>
+      <button class="agent-btn" data-agent="RISK_OPPORTUNITY">R&amp;O</button>
+      <button class="agent-btn" data-agent="CAM_AGENT">CAM</button>
+    </div>
+
+    <div id="messages"></div>
+
+    <div id="input-area">
+      <textarea id="prompt-input" rows="2" placeholder="Ask a question..."></textarea>
+      <button id="send-btn">Send</button>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="utils.js"></script>
+  <script src="api-client.js"></script>
+  <script src="orchestrator.js"></script>
 </body>
 </html>
